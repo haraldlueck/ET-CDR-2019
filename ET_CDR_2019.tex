@@ -1,0 +1,55 @@
+\documentclass[url,11pt,fleqn]{book} % Default font size and left-justified equations
+\input{structure.tex}
+\begin{document}
+%\linenumbers
+\input{cover.tex}
+\part{Science Case}
+\part{Site, Infrastructure and Instrument}
+\label{part:Instrumental}
+
+\input{Introduction.tex}
+\input{Facilities_and_Infrastructures.tex}
+\input{Detector.tex}
+\input{Summary}
+%\addcontentsline{toc}{section}{Appendix}
+\appendix
+\input{Appendix.tex}
+\bibliographystyle{unsrt}
+\bibliography{GWrefs}
+
+
+\clearpage % works better than \FloatBarrier here
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+% \bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
+\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS
+
+\bibliography{ReferencesET}{}
+ 
+% Choose Phys. Rev. style for bibliography
+%\bibliographystyle{authordate2}
+%\bibitem{PPP} F. Piergiovanni, M. Punturo, P.Puppo, "The thermal noise of the Virgo+ and Virgo Advanced Last Stage Suspension (The PPP effect)", Virgo-Note, VIR-015C-09.
+%\bibitem{LSSpaper} Bernardini A., Majorana E. ,Puppo P. ,Rapagnani P. , Ricci F., Testi G. "Suspension last stages for the mirrors of the Virgo interferometric gravitational wave antenna." Rev. Sci. Instr. 70, no. 8 (1999): 3463.
+
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\listof{ETbox}{List of Boxes}
+\newpage
+\input{nomenclature.tex}
+\printnomenclature[0.75in] 
+\newpage
+%\section*{Impressum}
+\include{impressum}
+\newpage 
+%
+\FloatBarrier
+%
+%
+\pagestyle{empty}
+\begin{textblock*}{297mm}(0mm,0mm)   \includegraphics[width=\paperwidth]{TheETscienceTeam.jpg}
+\end{textblock*}
+\newpage
+\end{document}
