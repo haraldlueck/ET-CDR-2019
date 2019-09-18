@@ -24,7 +24,7 @@
 
 
 \usepackage{titlesec} % Allows customization of titles
-
+\usepackage{subcaption} %enables subfigures
 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{Pictures/}{figures/cosmo/}} % Specifies the directory where pictures are stored
@@ -421,7 +421,14 @@ innerbottommargin=5pt]{cBox}
 \newcommand{\greencomment}[1]{{\color{green}{[[ #1]]}}}
 \newcommand{\redtext}[1]{{\noindent\color{red}{\it #1 }}}
 
-            
+ 
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bear}{\begin{array}}
+\newcommand{\ear}{\end{array}}
+\newcommand{\dy}{\displaystyle}
+\newcommand{\beg}{\begin{gathered}}
+\newcommand{\eeg}{\end{gathered}}           
 
 \textwidth 6in
 \oddsidemargin 0.25 in

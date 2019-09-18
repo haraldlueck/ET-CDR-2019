@@ -1,0 +1,69 @@
+\documentclass[url,11pt,fleqn]{book} % Default font size and left-justified equations
+% test commit adf
+
+%%% colors for quick comments
+\newcommand{\tcr}{\textcolor{red}}
+\newcommand{\tcb}{\textcolor{blue}}
+\newcommand{\tcm}{\textcolor{magenta}}
+\newcommand{\tcg}{\textcolor{green}}
+\newcommand{\tcp}{\textcolor{purple}}
+
+
+\input{structure.tex}
+\begin{document}
+
+%\linenumbers
+\input{cover.tex}
+\input{Intro/Introduction.tex}
+
+\part{SCIENCE CASE}
+\input{ScienceCase/ScienceCase.tex}
+\part{SITE, INFRASTRUCTURE AND INSTRUMENTATION}
+
+\label{part:Instrumental}
+\input{SiteInfra/SiteandInfrastructures.tex}
+\input{Detector/Detector.tex}
+\input{GlobalComputingInfrastructure/GlobalComputingInfrastructure.tex}
+\part{COSTS AND PLANNING}
+\input{Costing/Costing.tex}
+
+\input{./Summary/Summary}
+%\addcontentsline{toc}{section}{Appendix}
+
+\appendix
+\input{Appendix.tex}
+
+\clearpage % works better than \FloatBarrier here
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+% \bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
+\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS
+\bibliography{bibFiles/ET_CDR_2019_References}
+% Choose Phys. Rev. style for bibliography
+%\bibliographystyle{authordate2}
+%\bibitem{PPP} F. Piergiovanni, M. Punturo, P.Puppo, "The thermal noise of the Virgo+ and Virgo Advanced Last Stage Suspension (The PPP effect)", Virgo-Note, VIR-015C-09.
+%\bibitem{LSSpaper} Bernardini A., Majorana E. ,Puppo P. ,Rapagnani P. , Ricci F., Testi G. "Suspension last stages for the mirrors of the Virgo interferometric gravitational wave antenna." Rev. Sci. Instr. 70, no. 8 (1999): 3463.
+
+\clearpage
+\chapterimage{Intro/Intro_Figures/ArtisticView2.jpg} % Chapter heading image
+%Einstein Telescope artists impression copyright Nikhef
+\listoffigures
+\clearpage
+\chapterimage{Intro/Intro_Figures/ArtisticView2.jpg} % Chapter heading image
+%Einstein Telescope artists impression copyright Nikhef
+\listoftables
+\clearpage
+\chapterimage{Figures/Boxes.jpg} % Chapter heading image
+%copied from: https://www.america-retail.com/colombia/colombia-carton-de-colombia-realizara-inversiones-por-us170-millones/
+\listof{ETbox}{List of Boxes}
+\newpage
+\input{nomenclature.tex}
+\printnomenclature[0.75in] 
+\newpage
+%\section*{Impressum}
+\include{impressum}
+\newpage 
+%
+\FloatBarrier
+\end{document}
+
