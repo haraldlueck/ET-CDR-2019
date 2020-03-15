@@ -1,0 +1,30 @@
+\subsubsection*{Introduction}
+
+Stray-light in gravitational-wave interferometric antennas is the light coming from the laser source which does not follow the intended path. The reasons for that deviation could be many, such as scattering off non-idela surfaces of optical elements, clipping by finite aperture, spurious reflections off anti-reflective surfaces and so on. Stray-light related noise has been recognized to be an issue since the very first investigation of technical limitations in the interferometers designed for detection of gravitational waves \cite{Billing79}. A tiny amount of stray light coupling with the fundamental mode after probing the vibrations of infrastructures will bury any gravitational signal. \\
+Let us indicate by $f_{sc}$ the fraction of laser power that couples back to the main interferometer mode $\Psi_0$ after a scattering event:
+  \begin{equation}
+    f_{sc} = |\langle \Psi_{stray}|\Psi_0^*\rangle |^2
+  \end{equation}
+ The overall field will then be expressed by the superposition of the these two contributions: 
+   \begin{equation}
+        E_{tot} = E_{in} + E_{s} = E_{in} + \sqrt{f_{sc}} E_{out} e^{i \phi_s(t)}
+   \end{equation}  
+where $E_{s} = \sqrt{f_{sc}} E_{out} exp \left[i \phi_s(t) \right]$ is the scattered field in the main mode.
+The whole point about the issue of the stray light is all in the phase modulation of the stray field due to the motion $ z_s(t)$ of the stray source:
+   \begin{equation}
+        \phi_s(t) = \phi_0 + \frac{4\pi}{\lambda} z_s(t)
+   \end{equation}
+  This modulation of phase is not only directly mimicking a gravitational wave signal if it leaks to the anti-symmetric port of the interferometer, but also can give rise to \textit{amplitude noise} of the field \cite{vajente_vesf12}:
+
+  \begin{equation}
+        E_{tot} = E_{in} \exp \left[ \sqrt{f_{sc} \frac{P_{out}}{P_{in}}} \left( cos \phi_s(t) + i sin \phi_s(t) \right) \right]
+  \end{equation}
+  To be noticed that the above equation holds true for whatever amplitude of stray light source motion, provided that the fraction of stray light is such small to be treated as a perturbation. Nevertheless, when such motion is large with respect to the field wavelength $\lambda/2$, important non-linear effects emerge due to the \textit{fringe wrapping} of the phase modulation.\\
+The problem of stray light could therefore break down to understand and possibly mitigate:
+\begin{itemize}
+    \item the recombination $ f_{sc}$ of stray light to the main mode;
+    \item the amplitude and frequency of the displacement noise $z_s(t)$ of the stray light source;
+    \item the transfer function of the stray field to the anti-symmetric port of the interferometer.
+\end{itemize}
+\subsubsection*{Lessons learned}
+The first studies on the potential impact of stray light were performed by K. Thorne back in 1989 \cite{Thorne89}, followed soon by J.Y. Vinet, S. Braccini and V. Brisson. The main goal was to assess the impact and the possible mitigation of stray light bouncing in the long arm tubes \cite{Vinet96, Vinet97}. The outcomes of the studies were both the design (geometry, position, materials) of a system of baffles to be installed in the long tubes, and the translation of Monte Carlo methods to track photons in the GW community. This latter method, however, was soon understood not to be enough to fully capture the potential risks of the stray light, without taking into account the coherent effects that were not easy to simulate.\\ This scenario changed with the development of simulation methods based on Fast-Fourier Transform applied to laser field propagation \cite{SIS,DarkF}.

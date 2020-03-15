@@ -5,16 +5,16 @@
 
 %**********************************************
 \section {Optical Layout}
-% Authors A. Freise, S. Hild, R. Flaminio
+% Authors A. Freise, S. Hild
 \label{Sec:Layout}
 \input{Detector/Optics/OpticalLayout/OpticalLayout.tex}
-
+\FloatBarrier
 \section{Optics and Interferometry}
 % Authors R.Flaminio, A. Freise, S.Hild
 \label{Sec:Optics}
 
 \subsection{Core Optics and Coatings}
-% Jerome
+%  Author: Jerome
 \label{Sec:CoreOptics}
 \input{Detector/Optics/CoreOptics/CoreOptics.tex}
 
@@ -23,18 +23,27 @@
 \label{Sec:Lasers}
 \input{Detector/LightSources/Lasers/Lasers.tex}
 
-\subsection{Quantum noise reduction}
-\tcb{ET design, 5.5, also D3 (filter cavity)}
-% interferometer configuration, squeezing, 
+\input{Detector/LightSources/Squeezers/Squeezers.tex}
 \label{Sec:Squeezers}
-% Author: H Vahlbruch?, S. Danilishin?, Jean-Pierre Zendri?
+% Author: Moritz Mehmet, Henning Vahlbruch
 
-%\subsection{Auxilliary Optics}
+\subsection{Quantum noise reduction}
+
+\input{Detector/QNR/QNR.tex}
+\label{Sec:QNR}
+% Author: Stefan Danilishin
+
+\subsubsection{Frequency dependent squeezing}
+\input{Detector/QNR/FDS.tex}
+\label{Sec:FDS}
+% Autors: Jean-Pierre Zendri, Moritz Mehmet, Henning Vahlbruch
+
+
+%\subsection{Auxiliary Optics}
 %\input{Detector/Optics/AuxOptics/AuxOptics.tex}
 
 \subsection{Interferometer control}
-% Hartmut Grote
-\tcb{does not exist yet}
+% Author: Hartmut Grote
 \input{Detector/Optics/Control/Control.tex}
 
 %\subsection{Alignment and beam shape control}
@@ -42,15 +51,14 @@
 % merge 
 
 \subsection{Scattered Light Mitigation Systems}
-% Antonio Chiummo?
+% Author: Antonino Chiummo
 \input{Detector/Optics/Scatter/Scatter.tex}
-\tcb{does not exist yet, maybe move to other section}
 
 
 %**********************************************
-
+\FloatBarrier
 \section{Seismic Isolation and Suspension}
-% author Giovanni Losurdo, Giles Hammond
+% Authors: Giovanni Losurdo, Giles Hammond, Conor Mow-Lowry
 \label{Sec:SASandSUS}
 
 \subsection{Seismic Isolation Systems}
@@ -60,12 +68,16 @@
 \subsection{Test Mass Suspension Systems}
 \label{Sec:SUS}
 \input{Detector/SASandSUS/SuspensionSystems/SuspensionSystems.tex}
+\FloatBarrier
 
-\section {Newtonian Noise and Environmental noise}
-% author Jan Harms?
+\section{Cryogenics}
+%author Fulivi Ricci 
+\label{Sec:Cryogenics}
+\input{Detector/Cryogenics/Cryogenics.tex}
 
-\subsection {Newtonian Noise Cancellation}
-\label{Sec:NewtonianNoise}
-\input{Detector/NewtonianNoise/NewtonianNoise.tex}
 
-\subsection {Environmental Noise}
+\section{Vacuum System}
+% author G.Gemme
+\label{Sec:Vacuum}
+\input{Detector/Vacuum/Vacuum.tex}
+

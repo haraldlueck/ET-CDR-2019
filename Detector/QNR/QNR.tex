@@ -1,0 +1,86 @@
+%\subsubsection{Quantum noise reduction techniques}
+
+
+In a laser-interferometric gravitational-wave detector, there are different types of noise sources, which are usually categorized into quantum noise sources and classical noise sources (cf.\ Sec.~\ref{sec:optlayout}). In terms of the noise, the main difference in the sensitivity of the different topologies comes from the spectral distribution of the quantum noise, even though there could also arise differences in the susceptibility to the classical noise, due to the fact that there are e.g.\ a different number of mirrors or different shapes of cavities. Therefore, the choice of topology is mainly defined by the choice of quantum noise reduction techniques used.
+
+\textbf{Quantum noise} in the interferometers originates from the fundamental quantum fluctuations of light amplitude and phase that follow the Heisenberg uncertainty relation. Quantum phase fluctuations can be viewed as a manifestation of Poissonian statistics of the photons emitted by an ideal laser and thus limit the measurement precision of any interferometric device. This uncertainty of photons arrival time at the photodiode known also as \textit{shot noise} scales down with the increase of the number of photons used for the measurement and thus is inversely proportional to the light power interacting with the test masses of the interferometer. Amplitude fluctuations of light lead to the fluctuations of radiation pressure on the mirrors, resulting in the random motion of the mirrors and of the arm length change that
+mimics the gravitational wave signal. This second component of quantum noise is known as \textit{quantum radiation-pressure} or \textit{quantum back-action} noise. It
+naturally scales up with light power and is most prominent at the low frequencies, where massive suspended mirrors have higher response to the driving force. The fact
+that quantum shot noise and then quantum radiation-pressure noise have an inverse dependence on power and that the underlying fluctuations of phase and amplitude are uncorrelated, gives rise to a so called standard quantum limit (SQL)~\cite{Braginsky1968,Braginsky1999} on continuous high-precision interferometric measurements. 
+
+However the SQL is not a fundamental limitation on the achievable sensitivity of the interferometer, but rather a convenient benchmark for comparing different quantum noise mitigating schemes proposed so far for advanced gravitational-wave interferometry (see \cite{2019_LivRevRel_Danilishin} and references therein). It is also a vivid example of the trade-off one has to make between high sensitivity at shot-noise-dominated high frequencies vs. the reduced back-action-noise at low frequencies (below 10 Hz) which cannot be simultaneously attained in a conventional displacement-sensitive interferometer. This obstacle can be overcome by using 2 conventional interferometers instead of one, using a so called \textit{xylophone} configuration~\cite{Hild2010a}. 
+
+Based on the requirements on the quantum noise sources (and technical ones, cf. Sec.~\ref{sec:optlayout}), we have chosen a xylophone configuration ~\cite{Hild2010a} as an optimal design of ET (cf. Sec.~\ref{sec:xylophone}). Each detector in a xylophone configuration is split into two interferometers, one optimized for low frequencies, operating at low light power and the other optimized for high frequencies operating at high light power. A xylophone configuration resolves two major problems:
+\begin{itemize}
+\item The simultaneous usage of high circulating light power for increasing the high-frequency sensitivity and cryogenic mirrors for decreasing thermal noise. In a xylophone configuration the low-frequency interferometer utilizes relatively low optical power which does not pose a problem of heating the cryogenic mirrors, while the mirrors at room temperature in the high-frequency interferometer allow use of much higher light power.
+\item Simultaneous decrease of photon shot noise and radiation pressure noise. The sensitivity of the radiation pressure noise-dominated low-frequency interferometer benefits from low light power, while the sensitivity of the shot noise-dominated high-frequency interferometer benefits from the high light power.
+\end{itemize}
+
+
+
+There is nevertheless a fundamental limit on sensitivity more stringent than the SQL \cite{Miao2017b,Miao2017,2019_LivRevRel_Danilishin}. It sets the ultimate limit on the precision attainable for a given configuration of the interferometer and goes by name \textit{energetic quantum limit} \cite{00p1BrGoKhTh} in GW interferometry or by name \textit{quantum Cram\'er-Rao bound}~\cite{Tsang2011} in quantum metrology. In the context of laser interferometric gravitational-wave detectors, it can be expressed in terms of a power spectral density (PSD) of interferometer noise in the units of GW strain $h$:
+\begin{equation}\label{eq:FQL_new}
+S^h_{\rm FQL}(\Omega)=\frac{\hbar^2c^2}{S_{PP}(\Omega)L^2} = 
+\frac{4\hbar^2}{S_{\cal E E}(\Omega)}\,. 
+\end{equation}
+Here $S_{PP}$ is the single-sided PSD for the fluctuations of optical power $P$ inside the arms and $S_{\cal EE} = 4 S_{PP} L^2/c^2$ is the corresponding PSD of fluctuations of light energy stored in the arms. This means that large uncertainty of energy of intracavity photons is necessary to probe the spacetime precisely, which is a direct upshot of the energy-time uncertainty relation. 
+
+Reaching this fundamental quantum limit in a given configuration is a non-trivial task that requires using quantum noise reduction techniques. They have different, and often very special, requirements on the optical topology. The quantum-noise reduction techniques can be divided into two main groups: (i) those that engineer quantum correlations between the components of quantum noise with the goal of {\bf quantum noise cancellation} or reduction, and (ii) those that instead aim at modifying the response of the interferometer to the GW so as to {\bf amplify the signal}.
+
+The former methods encompass a vast body of schemes, of which the most mature one is the injection of squeezed vacuum into the readout port of the interferometer first proposed by Unruh \cite{PhysRevD.19.2888}. It has successfully improved the sensitivity of GEO600~\cite{GEOsqueezing} and Advanced LIGO~\cite{Aasi2013NatPhot} detectors and is now considered as an integral part of any future GW detector design. Yet the injection of squeezed vacuum alone cannot lead to the desired broadband suppression of quantum noise because of the frequency dependent quantum correlations between the phase and amplitude fluctuations of the intracavity light as a result of the interaction between light and the mechanical motion of the mirrors~\cite{KLMTV}. The solution is to use frequency dependent squeezing injection technique~\cite{KLMTV} that is discussed in greater detail in Sec.~\ref{subsec:SQZforGWD}.
+
+Despite its success, squeezing injection does not allow the interferometer to saturate the FQL. This calls for more sophisticated and yet experimentally unexplored
+quantum noise cancellation methods known as {\bf quantum non-demolition (QND)} techniques that are covered below. 
+
+The second group of methods is based on the idea that the spectral distribution of the SQL itself is not a fixed constant, but depends on the test object dynamics, i.e.\ on the (mechanical) susceptibility of the test mass, which relates the test-mass motion to all forces acting on it. Therefore, the free-mass SQL can be beaten by using a more responsive object and thus increasing its signal displacement---the harmonic oscillator as an example has much stronger response to near-resonance forces and therefore a better sensitivity than the free-mass SQL around the resonance frequency. Therefore, the sensitivity gain is obtained not by delicate cancelation of the
+quantum noise, but by a classical {\bf signal amplification}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Review of quantum non-demolition topology options}
+\label{subsec:qndopt}
+
+The second generation laser-interferometric gravitational-wave detectors, Advanced LIGO detector~\cite{TheLIGOScientific:2014jea} and Advanced VIRGO detector~\cite{TheVirgo:2014hva}, are already limited by quantum noise in a major part of their detection band. Science objectives of ET (see Ch.~\ref{chap:ScienceCase}) and other next generation instruments instruments make it an imperative to improve low and high-frequency sensitivity by at least an order of magnitude as compared to the current machines. This cannot be done without using the QND techniques to suppress quantum noise below the SQL.
+
+The impressive progress in mitigation of the technical noise sources in the current interferometers as well as an extensive current R\&D on reduction of thermal noise of the core optics (cf. Sec~\ref{Sec:CoreOptics}), on advanced seismic isolation (cf. Sec~\ref{Sec:SASandSUS}) and on Newtonian noise mitigation (cf. Sec~\ref{sec:mitigateNN}) allows to project that quantum noise will be the main obstacle towards reaching the design sensitivity of ET and  for further progress of GW interferometry in general. As there are natural limitations on the mass of the mirrors and on the achievable level of light power in the arms, the significant modification of interferometer topology, optical readout and use of non-classical light sources becomes an essential for the next generation GW detectors.
+
+As we have seen in Sec.~\ref{sec:lshape}, there are different topology options available which can all be fitted into an L-shaped geometry. A plethora of various schemes that promise significant improvement in terms of quantum noise has been developed so far, which however require significant and sometimes drastic changes to 
+the conventional Fabry-Perot--Michelson optical scheme. Many of them have great potential in reducing the quantum noise, but there is a big discrepancy in terms of readiness: some are far away from being ready to be implemented into gravitational-wave detectors, others have been already demonstrated experimentally as a proof of principle or have been even already implemented into gravitational-wave detectors. 
+The non-exhaustive list of QND options in the descending order of experimental readiness/level of R\&D completeness 
+ is presented below (more detailed description can be found in \cite{2019_LivRevRel_Danilishin}):
+ \begin{enumerate}
+ \item
+ \textbf{Injection of (frequency-dependent) squeezed vacuum} in the readout port of the interferometer (see more detail in Sec.~\ref{subsec:QNRsqz})
+uses inherent quantum correlations in non-classical states of light to reduce quantum fluctuations in the readout quadrature of the interferometer 
+in the shot-noise-dominated frequency range \cite{1981_PRD.23.1693_Caves,2011_Nat.Phys.7.962_LSC,Aasi2013NatPhot,Schnabel2017}. 
+Additional filter cavities can be used to rotate squeezing angle in an optimal frequency dependent way \cite{KLMTV,2013_OE.21.30114_Loss_in_FC_Isogai,Oelker2016}
+to gain a broadband suppression of quantum noise. 
+\item
+\textbf{Conditional frequency-dependent squeezing} \cite{Ma_NPhys_13_776_2017} is a recent proposal that allows to achieve frequency dependent 
+squeezing enhancement without filter cavities. It uses a nondegenerate two-mode squeezer that produces entangled beams with far detuned from 
+each other frequencies, of which one, \textit{signal}, coincides with the pump laser frequency and another, \textit{idler}, is shifted by several MHz, and thereby passes through 
+the interferometer gaining only optimal frequency-dependent phase shift. Detection of the idler beam projects the signal one into an optimal frequency dependent 
+squeezed state that gives the desired sensitivity improvement. Recent table-top experiments at ANU \cite{2019arXivEPRsqzANU} and Hamburg \cite{2019arXivEPRsqzHamburg}
+proved the viability of this technique, yet confirmed the penalty of twice the decoherence caused by the injection loss and the loss at the readout as compared to a single-mode 
+squeezing-based schemes.
+\item
+\textbf{QND speed-meter interferometers} \cite{00a1BrGoKhTh,02a2Kh,Purdue2001,Purdue2002,Chen2003,04a1Da} offer an alternative way to mitigate back-action noise in an intracavity way.
+This is achieved by modifying the way light passes through the interferometer so as to let it interact with the mechanical motion of the test masses two times sequentially in a coherent way, 
+thereby making the readout signal proportional to the velocity of the mirrors and at the same time coherently subtracting a major fraction of back-action. Speed meters can be realised in many 
+various ways, either using ring arm cavities\cite{Chen2003,2014_CQG.31.215009_Graef}, polarisation optics \cite{Danilishin2004,PhysRevD.87.096008,PhysRevD.86.062001,2018_PCSM_danilishin,2017_Phys.Lett.A_EPR_SM}, or simply adding a long-base ``sloshing'' cavity to a Michelson interferometer \cite{Purdue2001,Purdue2002,2019arXiv190904185F}. Apart from Michelson interferometers,
+speed meters are arguably the most extensively studied and well understood interferometer topology, where the impact of real-world imperfections and asymmetries is analysed in great detail \cite{2015_NJP17.043031_asymSag, 2018_NJP.20.10.103040_QN_cancellation,2017_PhysRevD.95.062001}. 
+\item
+\textbf{Hybrid schemes} that seek to enhance sensitivity by coupling the interferometer light mode to a generally nonlinear quantum system.  
+The first use of this approach was to create a so called \textbf{white-light cavity (WLC)}  \cite{Wicht1997} by introducing atomic gain medium in the arms
+prepared in such a way to render negative dispersion for the signal sidebands. This would cancel the positive dispersion of the arm cavities 
+and would result in a broadening of the bandwidth of the interferometer without sacrificing its peak sensitivity. The atomic medium,
+however, has proven to be too noisy for the purpose of GW detection, but the two new promising approaches were suggested. The first suggests to place a 
+nonlinear (squeezer) crystal in the signal-recycling cavity \cite{Korobko2017} and the other suggests to use an unstable optomechanical filter instead \cite{Miao2015a,Peano2015}. 
+The main advantage of the WLC-schemes is their capacity to unlock the kHz frequency band for detection, as it is there, where the binary 
+neutron star merger signals mainly reside,  while the conventional GW detectors' sensitivity there wanes due to finite bandwidth of the arm cavities \cite{Miao2017c}.
+
+Other uses of hybrid schemes include the \textbf{intracavity signal amplification} \cite{Somiya2014,17a1KoKhSc} and the \textbf{coherent quantum noise cancellation (CQNC)} \cite{2010_PhysRevLett.105.123601_CQNC_Tsang,2014_PhysRevA.89.053836_CQNC_Wimmer} schemes. The former suggest to put the parametric optical amplifier (based on squeezer crystal) 
+in a detuned signal recycling cavity to amplify the signal sidebands and the created optical spring, thereby enhancing the response to the GW signal. The latter one uses 
+Kerr nonlinear system and a tailored optical coupling between the main mode and the ancilla to create a so called ``negative mass'' mechanical oscillator. If the mechanical susceptibility
+ of this virtual oscillator matches the one of the test masses, the back-action noise of the two systems cancel each other completely due to the opposite sign of the effective mass. A similar effect can be reached using a spin-based negative mass oscillator as suggested in \cite{17a1KhPo,Moeller_Nature_547_191_2017}.
+\end{enumerate}

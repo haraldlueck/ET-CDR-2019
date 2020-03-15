@@ -5,14 +5,15 @@ In laser interferometers for GW detection the instrument has to be kept under Hi
 \item reduce the noise due to vacuum fluctuations along the beam path to an acceptable level; 
 \item isolate test masses and other optical elements from acoustic noise; 
 \item reduce test mass motion excitation due to residual gas fluctuations;
-\item reduce friction losses in the mirror suspensions \item contribute to thermal isolation of test masses and of their support structures; 
+\item reduce friction losses in the mirror suspensions \redcomment{excitation due to residual gas pressure fluctuation and residual gas damping of pendulum motion is the same mechniasm}
+\item contribute to thermal isolation of test masses and of their support structures; 
 \item contribute to preserve the cleanliness of optical elements. 
 \end{itemize} 
+The power spectral density of gas-induced fluctuations in the optical path length has been calculated choosing conservative beam shape parameters and taking a safety factor of at least $10$ with respect to the pressure producing a phase noise at the limit of the best sensitivity.
 
-The noise due to vacuum fluctuations (refractive index instabilities due to statistical fluctuations of the number of molecules in the volume occupied by the laser beam in the arm cavities) has been calculated choosing conservative beam shape parameters and taking a safety factor of at least $10$ with respect to the pressure producing a phase noise at the limit of the best sensitivity (Fig. 
-%\ref{fig:vac3}
-). The residual gas composition will be dominated by hydrogen with presence of water and other gases; we will keep the total residual pressure at about $10^{-10}$~mbar, corresponding to a noise level below $10^{-25}$~Hz$^{-1/2}$ (see Fig. %\ref{fig:vac3}
-). The vacuum system will be extremely clean from heavy organic molecules, both to limit the phase noise and to prevent pollution of the optical components. Hydrocarbon partial pressure shall be at the level of $10^{-14}$~mbar. %\begin{figure}
+The residual gas composition will be dominated by hydrogen with presence of water and other gases; we will keep the total residual pressure at about $10^{-10}$~mbar, corresponding to a noise level below $10^{-25}$~Hz$^{-1/2}$.
+The vacuum system will be extremely clean from heavy organic molecules, both to limit the phase noise and to prevent pollution of the optical components. Hydrocarbons partial pressure shall be at the level of $10^{-14}$~mbar.
+
 % \begin{center} 
 % \includegraphics{Sec_SiteInfra/Figures/VAC3.jpg} 
 % \caption{Phase noise given by the residual gases compared to the expected sensitivity, computed for the appropriate beam profile for different gas compositions. (Goal gas composition: Hydrogen [$1\,10^{-10}$ mbar], Water [$5\,10^{-11}$ mbar], Nitrogen [$1\,10^{-11}$ mbar])} 
@@ -28,12 +29,9 @@ To meet these requirements it will be necessary:
 
 % Concerning the phase noise, the path length of the beams in HV will be kept short, that is a negligible noise contribution, when compared to the kilometers in the UHV arm pipes. 
 
-The ET vacuum system (Fig. 
-%\ref{fig:vac1}
-) 
-will be composed of several UHV pipes with kilometric length and several cylindrical vertical HV/UHV tanks (towers) containing the optical elements and their support structures (Fig. 
-%\ref{fig:vac2}
-). In general it is necessary to have the whole vacuum system constituting one single volume, without physical separations (windows) on the laser beam path. HV volumes (the towers) contain parts of the apparatus not easily compatible with UHV pipes where, on the contrary, the large majority of the laser beam has to travel. The separation between HV and UHV is obtained by differential pumping or by cryogenic traps, stopping the migration of water and other high vapor pressure components. Large gate valves will be put at each end of the arm pipes, in order to preserve vacuum when venting a tower. For the same reason each tower will be separable from the rest of the vacuum enclosure by suitable gate valves. The filter cavities being less sensitive to vacuum noise require a residual pressure at the level of $10^{-7}$~mbar. Their pipes will neither be fired at 450$^\circ$C nor baked at 150$^\circ$C. 
+The ET vacuum system (Fig. )%\ref{fig:vac1} 
+will be composed of several UHV pipes with kilometric length and several cylindrical vertical HV/UHV tanks (towers) containing the optical elements and their support structures (Fig. ).%\ref{fig:vac2}
+In general it is necessary to have the whole vacuum system constituting one single volume, without physical separations (windows) on the laser beam path. HV volumes (the towers) contain parts of the apparatus not easily compatible with UHV pipes where, on the contrary, the large majority of the laser beam has to travel. The separation between HV and UHV is obtained by differential pumping or by cryogenic traps, stopping the migration of water and other high vapor pressure components. Large gate valves will be put at each end of the arm pipes, in order to preserve vacuum when venting a tower. For the same reason each tower will be separable from the rest of the vacuum enclosure by suitable gate valves. The filter cavities being less sensitive to vacuum noise require a residual pressure at the level of $10^{-7}$~mbar. Their pipes will neither be fired at 450$^\circ$C nor baked at 150$^\circ$C. 
 % \begin{figure} 
 % \begin{center} 
 % \includegraphics[width=\textwidth]{Sec_SiteInfra/Figures/VAC1.pdf} 
@@ -49,13 +47,13 @@ will be composed of several UHV pipes with kilometric length and several cylindr
 % \end{center} 
 % \end{figure} 
 
-The vacuum enclosure will be built of stainless steel (304L); this material is preferred for its easy availability, its price, the large experience in machining and welding, the mechanical properties (ductility), the chemical properties and the achievable outgassing rate. The vacuum system parameters are summarized in table 
-%\ref{tab:vacpar}
-, in the appendices. 
+\begin{comment}
+The technologies that were developed and employed in the existing gravitational wave observatories have been shown to meet the stringent requirements of vacuum integrity, very low hydrogen and heavy molecule outgassing, minimal particulate generation, low vibration, and appropriate stray light optical absorbance for successful operation. However, straightforward extrapolation of the costs for extending the interferometer vacuum beam enclosures from the current lengths of 3-4~km/arm to $\sim10$~km/arm indicates the need for investigation of a range of technologies and materials that could significantly lower the final cost, facilitate construction and increase the life-cycle operation of vacuum systems for next generation observatories. 
+\end{comment}
 
 \subsection{The arm pipes} 
 Due to the multi interferometer/xylophone choice for ET, several beams will run along each side of the triangular tunnel. We assume four main beams and two filter cavity beams, taking into account all the three detectors (six interferometers) composing the full ET. 
-
+\redcomment{Has to be consistent with other documents, which state 1\,km filter cavities. }
 The chosen baseline configuration includes four pipes, one for each main beam: two with a $0.9$~m diameter for the HF interferometers and two $0.75$~m diameter pipes, for the LF interferometers. In addition, two $0.69$~m pipes for the two filter cavity beams belonging to each LF interferometer. HF interferometers will be equipped also with a $300$~m long filter cavity, running in a dedicated tunnel, inside a $0.6$~m diameter pipe. The pipes will be arranged inside the tunnel cross-section as shown in Fig. 
 %\ref{fig:vac4}
 : the filter cavities at the bottom, under a movable floor, the two HF beams on the floor at the tunnel sides and the two LF beams on top of them (see below the "Tower" subsection).
@@ -126,7 +124,7 @@ Concerning the pipes arrangement in the tunnel, it is necessary to have the poss
 \subsubsection{Pipe pumping system} 
 The pipe pumping system has been conceived to be composed of standard modules, grouped together, in order to limit the number of pumping stations along the arms. 
 
-The required total residual pressure (hydrogen and other gases) of $1\,10^{-10}$~mbar can be obtained, after firing and bake-out, with one $5000$~l/s pumping group, every $500$~m, both in a $0.9$~m and in a $0.7$~m diameter pipe, the smaller gas load due to the smaller diameter being compensated by the relatively reduced conductance. Below is described the pumping system for one single pipe. 
+The required total residual pressure (hydrogen and other gases) of $10^{-10}$~mbar can be obtained, after firing and bake-out, with one $5000$~l/s pumping group, every $500$~m, both in a $0.9$~m and in a $0.7$~m diameter pipe, the smaller gas load due to the smaller diameter being compensated by the relatively reduced conductance. Below is described the pumping system for one single pipe. 
 
 Each permanent pumping group will consist of three identical modules, each made of one $2500$~l/s Ti sublimation pump (TSP), connected to the pipe through a $250$~mm gate valve (the Ti will be sublimated not in the tube but in a separated chamber), coupled to a $300$~l/s ion pump. The former to pump active gases, the latter to pump inert gases. At such a low pressure TSPs are expected to require not more than one yearly regeneration. NEG (Non Evaporable Getter) pumps are being considered as a possible alternative to TSPs. Some redundancy is necessary to cover the Ti pumps regeneration periods.
 

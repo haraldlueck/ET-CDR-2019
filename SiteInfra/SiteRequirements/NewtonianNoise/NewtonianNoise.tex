@@ -5,8 +5,8 @@ Local environmental mass-density fluctuations produce so-called Newtonian noise 
 As described in Section \ref{SiteReq}, the first step of any NN mitigation strategy is to reduce environmental disturbances. For ET, this includes site selection, underground construction, and realizing a low-noise detector infrastructure. However, only if the natural environment is among the quietest in the world, and excess anthropogenic noise can be avoided, then it might be possible to achieve the ET sensitivity target without NN cancellation. Nonetheless, without a detailed understanding of the seismic field, which is hard to obtain even with an extensive site-characterization study, NN modeling uncertainties are significant. It is therefore necessary to include NN cancellation in the R\&D plans.
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=0.49\textwidth]{./Detector/NewtonianNoise/NewtonianNoiseFigures/Seismic_Surf.pdf}
-    \includegraphics[width=0.49\textwidth]{./Detector/NewtonianNoise/NewtonianNoiseFigures/Seismic_UG.pdf}
+    \includegraphics[width=0.49\textwidth]{SiteInfra/SiteRequirements/NewtonianNoise/NewtonianNoiseFigures/Seismic_Surf.pdf}
+    \includegraphics[width=0.49\textwidth]{SiteInfra/SiteRequirements/NewtonianNoise/NewtonianNoiseFigures/Seismic_UG.pdf}
     \caption{Estimates of seismic NN for ET. Left: ET constructed at the surface. Right: ET constructed underground. Plot from \cite{BaHa2019}.}
     \label{fig:NNestimates}
 \end{figure}
@@ -15,7 +15,7 @@ As shown in Figure \ref{fig:NNestimates}, NN from surface waves will be strongly
 
 \subsection{Coherent noise cancellation}
 \label{sub:Wiener}
-The basic idea for noise cancellation is to exploit correlations between NN and data from a set of auxiliary sensors. An effective technique is to use Wiener filters \cite{Orf2007}. They are the optimal linear filters for this purpose provided that all time series are stationary, and they are effective even in the presence of non-stationary features in the data. Wiener filters can be estimates from data. It requires the calculation of correlations between all auxiliary sensors monitoring the environment, which form a correlation matrix $\mathbf C_{\rm SS}$, and between auxiliary sensors and GW detector, which form a vector $\vec C_{\rm SN}$. Since one is mostly interested in the frequency-domain representation of detector noise, correlations are expressed as cross-spectral densities depending on frequency $\omega$. The Wiener filter can then be written
+The basic idea for noise cancellation is to exploit correlations between NN and data from a set of auxiliary sensors. An effective technique is to use Wiener filters \cite{Orf2007}. They are the optimal linear filters for this purpose provided that all time series are stationary, and they are effective even in the presence of non-stationary features in the data. Wiener filters can be estimated from data. It requires the calculation of correlations between all auxiliary sensors monitoring the environment, which form a correlation matrix $\mathbf C_{\rm SS}$, and between auxiliary sensors and GW detector, which form a vector $\vec C_{\rm SN}$. Since one is mostly interested in the frequency-domain representation of detector noise, correlations are expressed as cross-spectral densities depending on frequency $\omega$. The Wiener filter can then be written
 \begin{eqnarray}
 		\vec w(\omega)=\mathbf C_{SS}(\omega)^{-1}\cdot\vec C_{\rm SN}(\omega)
 		\label{eq:Wiener}
@@ -78,7 +78,7 @@ Optimized seismometer arrays were initially studied for the cancellation of NN f
 Accordingly, Fig.~\ref{fig:residualN} gives an estimate of the required number of seismometers to cancel a certain amount of body-wave NN provided that they assume their optimal positions. 
 \begin{figure}[t!]
 	\begin{center} 
-		\includegraphics[width=0.7\textwidth]{./Detector/NewtonianNoise/NewtonianNoiseFigures/SNR_ch3.png} 
+		\includegraphics[width=0.7\textwidth]{SiteInfra/SiteRequirements/NewtonianNoise/NewtonianNoiseFigures/SNR_ch3.png}
 		\caption{Suppression of body-wave NN as a function of number of seismometers with optimal placement. The seismometers measure seismic signals with an SNR of 15. The black curve shows the lowest possible residual determined by the seismometer SNR without considering properties of the seismic field. Plot from \cite{BaHa2019}.} 
 		 \label{fig:residualN} 
 	\end{center}
@@ -88,7 +88,7 @@ About 15 seismometers are required to achieve a factor 10 suppression. It should
 In this context, one can now address the question how accurately the seismometers need to be placed with respect to their optimal locations. While direction and vertical drilling technology has become increasingly accurate \cite{MCZ2016}, significant deviations from optimal drilling are to be expected, which results in sub-optimal seismometer placements. Figure \ref{fig:errorNN} shows the residuals that can be achieved with sub-optimal seismometer placement. 
 \begin{figure}[t!]
 	\begin{center} 
-		\includegraphics[width=0.7\textwidth]{./Detector/NewtonianNoise/NewtonianNoiseFigures/errorbody.png} 
+		\includegraphics[width=0.7\textwidth]{SiteInfra/SiteRequirements/NewtonianNoise/NewtonianNoiseFigures/errorbody.png} 
 		\caption{Suppression of NN from body waves with 15 single-axis (ch1) and three-axis (ch3) seismometers. Sensor locations of 500 arrays for each histogram are derived from the optimal array by adding random numbers to all optimal coordinates drawn from Gaussian distributions of width $\sigma$. Vertical lines mark the residual of the optimal arrays. Plot from \cite{BaHa2019}.} 
 		 \label{fig:errorNN} 
 	\end{center}

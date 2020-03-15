@@ -10,23 +10,35 @@
 
 
 \input{structure.tex}
+\input{defs}
 \include{ET_Macros.tex}
 \begin{document}
 
 %\linenumbers
 \input{cover.tex}
+
 \input{Intro/Introduction.tex}
+% Coordinator: Harald Lueck
 
 \part{SCIENCE CASE}
+% Coordinator: Michele Maggiore
 \input{ScienceCase/ScienceCase.tex}
 \part{SITE, INFRASTRUCTURE AND INSTRUMENTATION}
 
 \label{part:Instrumental}
-\input{SiteInfra/SiteandInfrastructures.tex}
+
 \input{Detector/Detector.tex}
+% Coordinator: Andreas Freise
+
+\input{SiteInfra/SiteandInfrastructures.tex}
+% Coordinator: Giovanni Losurdo
+
 \input{GlobalComputingInfrastructure/GlobalComputingInfrastructure.tex}
-\part{COSTS AND PLANNING}
-\input{Costing/Costing.tex}
+% Coordinator: Stefano Bagnasco
+
+%\part{COSTS AND PLANNING}
+% Coordinator:  not part of this but a separate document
+%\input{Costing/Costing.tex}
 
 \input{./Summary/Summary}
 %\addcontentsline{toc}{section}{Appendix}
@@ -38,8 +50,10 @@
 \phantomsection
 \addcontentsline{toc}{section}{Bibliography}
 % \bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
-\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS
-\bibliography{bibFiles/ET_CDR_2019_References}
+%\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS%commented by MM
+\bibliographystyle{utphys}
+\bibliography{bibFiles/ET_CDR_2019_References,bibFiles/refsScienceCase, bibFiles/GWIC_3G_RaD_References}
+
 % Choose Phys. Rev. style for bibliography
 %\bibliographystyle{authordate2}
 %\bibitem{PPP} F. Piergiovanni, M. Punturo, P.Puppo, "The thermal noise of the Virgo+ and Virgo Advanced Last Stage Suspension (The PPP effect)", Virgo-Note, VIR-015C-09.

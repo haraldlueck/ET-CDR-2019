@@ -1,5 +1,179 @@
 
-\subsubsection{Detection?}
 
-\subsubsection{Calibration}
-\tcb{does not exist yet}
+
+To operate GW interferometers such as ET, many degrees of freedom (DOFs) need to be controlled. 
+The most important DOFs belong to the interferometer as a whole, and can be divided into the longitudinal DOFs, which involve controlling the position of the main mirrors along the optical axis, and the angular DOFs which refer to the orientation of the main mirrors with respect to the incident beam axis. 
+There are several more control loops, the auxiliary loops, which control e.g. the position or velocity of some part of a suspension, or the power of the laser system, but we mostly focus on longitudinal and alignment control here, since these are most critical for the overall performance of the interferometer.
+
+Regardless of the split in longitudinal and alignment control,
+some links between them exist too, such as the bi-linear coupling of alignment control noise with
+beam spot position on test masses into the longitudinal signals. We will point these out where required.
+
+
+\subsubsection{Longitudinal control}
+
+In the steady-state operation of the interferometer, longitudinal control is concerned with maintaing longitudinal DOF's relevant to keep the interferometer and optical cavities at (or sufficiently close to) their nominal operating points. Another distinctive task of longitudinal control is lock acquisition, which is the process of bringing the interferometer reliably to its steady-state operating point.
+
+For a single Fabry-Perot cavity, consisting of two or more mirrors, the standard way to obtain an error signal for locking the cavity to resonance with the incoming laser light, is the Pound-Drever-Hall technique \cite{Drever1983}. The technique consists of adding RF sidebands to the optical frequency of the laser using a modulator. Alternatively modulation can also be applied to the cavity itself, e.g. by modulating the round-trip length of the cavity. The signal in reflection of the cavity is then demodulated yielding a signal proportional to the deviation from resonance. This error signal can be used to control the length of the cavity by e.g. actuating on the mirror, or to control the laser frequency. This is a system with a single DOF and is applied for input mode-cleaners and output mode-cleaners of current GW interferometers, with sufficient performance to also be suitable for ET.
+
+A GW interferometer is more complex than a single cavity, and has more longitudinal degrees of freedom. 
+The number of DOF's for the main interferometer is determined by the number of optical resonators that form
+the interferometer (plus one for controlling the interference condition of the Michelson interferometer). Typically there are more suspended mirrors than DOFs which leaves some of them uncontrolled, as for example a global translation of all mirrors or the relative position of folding mirrors within recycling cavities (the latter may be controlled for ET if required, to reduce scattered light from moving fringe patterns on folding mirrors).
+
+The first generation ITFs (called PRFPMI), such as initial LIGO and Virgo consisted of 4 DOFs: Differential Arm length (DARM), consisting of the length difference of the two long arm cavities, Common mode ARM length (CARM), the length sum of the two long arms, the Michelson DOF (MICH) and the Power Recycling Cavity Length (PRCL). For the second generation detectors advanced LIGO, advanced Virgo and KAGRA, a fifth DOF is added: Signal Recycling Cavity Length (SRCL), which will also be the case for the ET interferometers.
+
+%[xx figure with DOF definition, ports]
+
+Of these five DOFs, the DARM loop is of particular importance, since it directly contains the information of gravitational wave signals. This means that greatest care is taken to bring the noise performance of the corresponding readout to the most fundamental limits of the given configuration.
+Since this DOF is also actively controlled, the effect of the corresponding feedback loop must be taken into account to obtain a calibrated gravitational-wave signal that can be used for data analysis.
+
+The operation of the Advanced LIGO and Advanced Virgo interferometers
+has demonstrated the feasibility of longitudinal control techniques for second generation detectors.
+In particular advanced LIGO, since operating with a signal recycling (extraction) mirror from the beginning,
+has demonstrated the control scheme for five longitudinal degrees of freedom,
+including their lock acquisition. 
+The basic scheme is based on the Pound-Drever-Hall technique, but uses two sets of modulations simultaneously,
+which are designed to yield signals for all five DOF's by sensing different combinations of the sideband signals and the carrier light at different interferometer ports \cite{SensingStrain:2003}.
+
+Ideally one would obtain one error signal per DOF, which is only sensitive to that DOF. In practice most signals are sensitive to more than one DOF, but to varying degrees. 
+The situation is coped with by using multiple-input, multiple-output (MIMO) linear combinations of signals 
+as well as gain hierarchy. Feed-forward/noise subtraction for spurious couplings is employed as outlined below.
+The ET design will build on this scheme, using simulations to find optimal sets of modulation frequencies and detection ports.
+
+The operation of Advanced LIGO has shown that coupling of residual motion of the signal recycling cavitiy length to the main gravitational wave readout (DARM degree of freedom) is a limitation
+of the sensitivity at low frequencies if DC readout is used. Since this coupling is proportional
+to the offset chosen in the DARM DOF,
+in ET this limitation will be avoided with the use of balanced homodyne detection (BHD) \cite{frit2014}, as also foreseen for the LIGO upgrade A+ currently under development.
+The employment of a BHD readout scheme for ET makes the optical layout a bit more complex, but the requirements seem well understood at this time. Experience at LIGO will inform the BHD design for ET.
+
+
+All currently operating interferometers employ digital control loops wherever possible, for the benefit of flexibility, stability and transient noise reduction of control transfer functions. Typical sample frequencies are around 10-64 kHz, but even for faster loops digital control is now used (at Virgo the fastest digital loop is now at 500 kHz.) 
+
+Digital demodulation is a technique that has been used in advanced Virgo, where optical signals are sampled with very high frequencies (several 100 MHz) in order to perform demodulation operations digitally, rather than with analog mixers \cite{TheVirgo:2014hva}. Recent advances in high-speed ADCs and FPGAs allows this option. This technique maintains flexibility throughout this signal processing step, at the cost of more complex hardware and need for careful dynamic range design. The benefits probably outweigh the disadvantages, such that the application of this technology for ET seems likely. The experience with advanced Virgo is a valuable input here.
+
+%The holometer was using FPGAs and might have used even faster loops, to be checked)
+
+%Several ways of obtaining error signals
+
+%2) For the 2nd generation, the readout of the sensitive DARM DOF was changed from an RF signal to using \emph{DC detection}. In this scheme, the DC power of the asymmetric output is used for DARM. Since this has a zero slope exactly at \emph{dark fringe} condition, a small offset (either to DARM or MICH) must be used. This system is more sensitive due to XX [cite DC detection]
+
+%3) for future detectors (e.g. LIGO O5?), even another scheme might be used, in which the AS port is interfered with a reference beam, this is known as balanced homodyne. No offset is needed in this case, which has xx advantages.
+
+\subsubsection*{Lock acquisition}
+
+One challenge of operating a GW interferometer is that at the operation point (steady state), several cavities need to be simultaneously resonant with picometer accuracy, while in the uncontrolled interferometer the mirrors are freely swinging by up to a micrometer per second. This already assumes that the payloads are pre-stabilized using the \emph{local controls}, which are part of the suspension system. Since the ET interferometers have 5 DOFs, the phase space is enormous.
+
+For systems with 3 DOFs, this problem is still manageable (e.g. GEO lock acquisition), since one can simply wait a short while until the various DOFs are close to resonance by chance, and then switch on the control loops with appropriate triggers (e.g. on some cavity power). However, already for GEO auxiliary locking signals derived from modulation sideband power had to be used. For 4 DOFs it gets harder, but was achieved with Initial LIGO \cite{Evans2002}, in which various loops are switched on in short succession, while changing the sensing scheme on the fly. Instantaneously locking 5 DOFs at about the same time is very hard due to the enormous phase space. It had successfully been tried out at the Caltech 40\,m prototype, 
+but was ultimately judged too unreliable.
+
+At the Virgo interferometer, the problem of locking 4 DOFs was tackled in a different way, by locking individual DOFs sequentially at different working points, before deterministically transitioning to the final one in several steps. This technique is called Variable Finesse \cite{VariableFinesse}, since it initially locks the Michelson DOF at half-fringe, thereby making it an effective mirror with low reflectively. 
+In the initial state the power recycling mirror is misaligned and gets slowly aligned during the locking sequence. This technique has been perfected over the last 10 years at Virgo and works very reliably.
+It may be possible that such a technique can be extended to 5 DOF's, by initially misaligning PRM and SRM mirrors, to be suitable for ET, but this will need more simulation work.
+
+For Advanced LIGO, as a result of the difficulty locking the 5 DOF configuration, an auxiliary laser system (ALS) was developed, which can lock the arm cavities independently with a different laser \cite{LIGO_ALS1, LIGO_ALS2}.  The technique used for aLIGO is to use an independent green laser system, which can lock the arm cavities and keep them out of resonance for the IR, while the remaining 3 central DOFs are locked in a traditional, one-shot way. Green laser light is injected from the end, and then extracted in central and interfered with the frequency doubled PSL.
+
+%[figure ALS scheme, maybe from Martinov paper]
+
+Locking a DRFPMI using ALS has been successfully demonstrated with the Advanced LIGO interferomter \cite{aLIGO_lock_acquisition}, which is now in daily use. For the KAGRA detector it is foreseen to use a similar scheme, but with the green injected from the central area towards the end. If this works, this would be a nice simplification of the LIGO scheme \cite{KAGRA_ALS}.
+It still employs additional hardware though, which also need additional time for commissioning and maintenance. Therefore, if a reliable locking system can be found without using an ALS it would clearly 
+be preferable in order to keep all systems at the lowest required complexity level.
+
+
+\subsubsection*{Steady state control}
+
+Once all the degrees of freedom are controlled and moved to their final working point, all control signals are derived from error signals with the lowest available noise (the highest signal-to-noise ratio). Further, control loops get optimised and actuator dynamic ranges get reduced, to minimize or eliminate digital-to-analog conversion (DAC) noise. When reached, this can be called the steady state, in which the most sensitive gravitational-wave measurements are performed. 
+
+In the steady state, noise of control loops gets important. Noise is being introduced to the interferometer's DARM DOF (which carries the GW signal) by longitudinal and alignment control loops. Typically this 'control noise' is dominated by the sensing noise of the contributing loops.
+Control noise is very relevant for ET, where one of the biggest challenges is to move the lower frequency limit of the detection band down from around 10-20 Hz (is current detectors) to 4 Hz. This is a frequency region where control noise from angular and auxiliary longitudinal DOFs typically dominates the sensitivity.
+
+For the auxiliary longitudinal DOF's (MICH, PRCL, and SRCL) noise subtraction schemes are employed
+successfully for the 2nd generation detectors, forming the model for ET.
+The methods can be divided in \emph{online} and \emph{offline} methods.
+Online methods work in real-time while the interferometer is operating,
+subtracting a sample of the auxiliary loop feedback from the DARM signal by
+applying it to DARM actuators with appropriate filtering.
+Offline methods subtract properly filtered feedback signals form auxiliary loops
+from DARM, after the DARM signal has been recorded.
+%online: alpha note, vajente locking paper, something at ligo
+%offline: Meadors, Driggers, 
+%Hrec. Might need something non-linear like latest thing by Gabriele
+Novel non-linear noise subtraction methods are under development, and possibly can
+improve subtraction performance for ET.
+
+
+
+%reducing noise of DARM loop is fundamental, but this is usually based on fundamental noises, or technical noise sources, and typically not on 'control noise' (i.e. changing the feedback filter does not change the calibrated output of the ITF). Aux DOFs need be clean too, due to the finite coupling to DARM. In this case, also the shape of the loop, or the accuracy is important, which can be called control noise. This influence needs to be minimized by careful optimization of the loops, and by subtracting (online or offline) any noise that remains.
+%reduction of control noise of aux DOFs
+
+
+
+%SRCL: tuned/detuned ...
+
+%\subsubsection*{new techniques}
+
+
+
+%SRCL control through the dark port: [cite thesis Vaishali Adya]
+
+%balanced homodyne (cite Fritschel et al) might be the future. this will likely be tested in one of the next upgrades at LIGO for O5 or O6, so this might be a mature technology at the time of ET.
+
+%suspension point interferometry?
+
+
+
+
+
+
+\subsubsection{Alignment control}
+
+Alignment control is primarily concerned with keeping all optics aligned with respect to each other
+and with respect to laser beams propagating between the optics.
+As such, it is global in the sense that it uses interferometric information about the relative alignment
+of laser beam axes, predominantly obtained with differential wavefront sensing (DWS). 
+In addition to this, alignment control is also concerned with keeping beam spots at dedicated positions (preferably close to the center) on the interferometer mirrors. This is a secondary goal, referred to as spot position control, that uses local information obtained from beam spot position sensors or from alignment (dither) modulation schemes. In the following we will be only looking at DWS alignment issues.
+
+As for longitudinal control, alignment control for ET will be based on the successful alignment
+solutions existing for advanced LIGO and advanced Virgo.
+For differential wavefront sensing, these are based on the extended Pound-Drever-Hall scheme as devised for longitudinal control,
+using at least two optical modulation frequencies and several sensing ports.
+
+However, since alignment control noise is limiting sensitivity at low frequencies in advanced LIGO and Virgo, (e.g. below about 20\,Hz in LIGO during the O3 run in 2019 ), 
+improvements will be needed for ET.
+
+A lower alignment control noise can be achieved in two major ways, namely by 
+\begin{itemize}
+\item reducing the residual alignment-relevant motion of the optics, i.e. motion 
+without the engagement of global alignment control
+\item increasing the signal-to-noise ratio of the alignment (DWS) sensing signals
+\end{itemize}
+
+Advances in the sensing and control of the suspension for ET will lead to some reduction of the alignment motion of the optics. Tilt-meters can be used to break the degeneracy of tilt and acceleration sensing at low frequencies, or novel seismometer configurations (6-d seismometer) may be used to this end \cite{MLMa2018,YuHM2018}. 
+If lower suspension (and thus mirror alignment) motion is achieved, this can be used for a reduction of alignment feedback bandwidth, thus lowering DWS control noise.
+For the ET-HF interferometer such potential reduction of bandwidth may be limited by
+the optical alignment springs (caused by radiation pressure, i.e. the Sigg-Sidles instability),
+which may require damping with DWS alignment control of sufficient bandwidth.
+Due to operating at lower laser power, in the ET-LF interferometer the optical alignment springs will be at lower frequencies than for ET-HF, such that a lower DWS control bandwidth may be realised here.
+What helps in case of ET-HF though is that the problem of alignment feedback noise is less severe in the first place. Due to the choice of sensitive frequency band, the interferometer can tolerate more low-frequency control noise than the ET-LF interferometer. Here the xylophone design of ET is clearly of advantage \cite{Hild2010a}.
+Further, the increase of mirror masses to 200\,kg for ET (about 5 times more than advanced detectors)  
+helps with decreasing the alignment optical spring frequencies.
+There may also be alternatives to damping of alignment optical spring resonances with DWS feedback,
+which is to be investigated. It may be possible to damp such modes with radiation pressure of the laser light itself, applying feedback forces in a narrow frequency band. This may help to reduce control
+noise originating from the DWS sensors if a bandwidth reduction is possible.
+
+It is expected that the increase in beam size in ET will make the alignment requirements more severe
+than for 2nd generation interferometers [?].
+Ultimately, the more detailed technical design studies have to account for this, and a find a suitable
+compromise.
+
+Improvements in the signal-to-noise ratio of alignment sensing signals are currently more uncertain.
+As a benchmark, new systems would have to have sensing noise below $10^{-15}$ rad/$\sqrt{\rm Hz}$,
+to make substantial improvements, which needs some more R\&D.
+The planned BHD readout will help in reducing contribution to sensing noise on wavefront-sensor signals, since it removes the first-order coupling of beam position on the wavefront sensor into the alignment signal.
+
+Another (additional) way to reduce alignment control noise coupling to DARM is to develop (possibly non-linear) Wiener filtering, to subtract alignment feedback noise using known witness channels. Some of these implementations have successfully reduced noise at operating interferometers. 
+
+
+
+%\subsubsection{Detection?}
+
+%\subsubsection{Calibration}
