@@ -17,10 +17,6 @@
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-% Bibliography
-%\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
-%\addbibresource{bibliography.bib} % BibTeX bibliography file
-%\defbibheading{bibempty}{}
 
 \usepackage{placeins} % allows floatbarriers
 \usepackage{titlesec} % Allows customization of titles
@@ -43,6 +39,13 @@
 
 \usepackage{eso-pic} % Required for specifying an image background in the title page
 
+\setcounter{secnumdepth}{4} % also number paragraphs
+\setcounter{tocdepth}{5} % show all sectionings in toc
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 %----------------------------------------------------------------------------------------
 %	MAIN TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
@@ -63,13 +66,32 @@
 {}
 {\sffamily\hfill\color{black}\thecontentspage} % Page number
 []
+
 % Subsection text styling
-\titlecontents{subsection}[1.25cm] % Indentation
-{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
-{\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
+\titlecontents{subsection}[2cm] % Indentation
+{\addvspace{1pt}\sffamily\bfseries\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{2cm}} % Subsection number
 {}
 {\sffamily\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
+
+% Subsection text styling
+\titlecontents{subsubsection}[2cm] % Indentation
+{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{2cm}} % Subsubsection number
+{}
+{\sffamily\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+[]
+
+
+% Subsection text styling
+\titlecontents{paragraph}[2.25cm] % Indentation
+{\addvspace{1pt}\sffamily\footnotesize} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{2.25cm}} % paragraph number
+{}
+{\sffamily\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+[]
+
 
 %----------------------------------------------------------------------------------------
 %	MINI TABLE OF CONTENTS IN CHAPTER HEADS
@@ -402,7 +424,6 @@ innerbottommargin=5pt]{cBox}
 \usepackage{stfloats}
 \usepackage{afterpage}
 \usepackage{multirow}
-
 %\usepackage{hyperref}
 %\usepackage[usenames,table,dvipsnames,svgnames]{xcolor}
 \usepackage{pdfpages}

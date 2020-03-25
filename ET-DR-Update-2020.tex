@@ -22,11 +22,11 @@
 
 \part{SCIENCE CASE}
 % Coordinator: Michele Maggiore
+\label{part:SC}
 \input{ScienceCase/ScienceCase.tex}
+
 \part{SITE, INFRASTRUCTURE AND INSTRUMENTATION}
-
 \label{part:Instrumental}
-
 \input{Detector/Detector.tex}
 % Coordinator: Andreas Freise
 
@@ -38,21 +38,25 @@
 
 %\part{COSTS AND PLANNING}
 % Coordinator:  not part of this but a separate document
-%\input{Costing/Costing.tex}
+\input{Costing/Costing.tex}
 
 \input{./Summary/Summary}
-%\addcontentsline{toc}{section}{Appendix}
+\addcontentsline{toc}{section}{Appendix}
 
 \appendix
-\input{Appendix.tex}
+input{Appendix.tex}
 
 \clearpage % works better than \FloatBarrier here
 \phantomsection
 \addcontentsline{toc}{section}{Bibliography}
 % \bibliographystyle{ieeetr} % changed to have numerical sorting of the citations
 %\bibliographystyle{et_dsd} %peter Wessels custom made style file for ET DS%commented by MM
-\bibliographystyle{utphys}
-\bibliography{bibFiles/ET_CDR_2019_References,bibFiles/refsScienceCase, bibFiles/GWIC_3G_RaD_References}
+%\bibliographystyle{utphys}
+\bibliographystyle{unsrt}
+\bibliography{./bibFiles/refsScienceCase,./bibFiles/ETCDR2019References}
+%\bibliography{./bibFiles/ETCDR2019References}
+%\bibliography{./bibFiles/refsScienceCase}
+%\bibliography{./bibFiles/references}
 
 % Choose Phys. Rev. style for bibliography
 %\bibliographystyle{authordate2}
@@ -68,17 +72,16 @@
 %Einstein Telescope artists impression copyright Nikhef
 \listoftables
 \clearpage
-\chapterimage{Figures/Boxes.jpg} % Chapter heading image
+chapterimage{Figures/Boxes.jpg} % Chapter heading image
 %copied from: https://www.america-retail.com/colombia/colombia-carton-de-colombia-realizara-inversiones-por-us170-millones/
 \listof{ETbox}{List of Boxes}
-\newpage
+newpage
 \input{nomenclature.tex}
-\printnomenclature[0.75in] 
+printnomenclature[0.75in] 
 \newpage
-%\section*{Impressum}
+\section*{Impressum}
 \include{impressum}
 \newpage 
 %
 \FloatBarrier
 \end{document}
-
